@@ -8,6 +8,7 @@ var ejs = require('ejs');
 var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var weathermapweb = require('./routes/weathermapweb');
+var allergy = require('./routes/allergy');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'views')));
 
 app.use('/index', index);
 app.use('/weathermapweb/ui/fusionweatherdata', weathermapweb);
+app.use('/api/allergy', allergy);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
